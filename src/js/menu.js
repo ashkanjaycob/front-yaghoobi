@@ -5,18 +5,12 @@ const drawer = document.getElementById('mobile-drawer');
 
 let savedScrollY = 0;
 
+// lock mobile menu backdrop scroll for currect ux
 function lockPageScroll() {
   savedScrollY = window.scrollY;
   document.documentElement.classList.add('mobile-menu-open');
   document.body.classList.add('mobile-menu-open');
   document.body.style.top = `-${savedScrollY}px`;
-}
-
-function unlockPageScroll() {
-  document.documentElement.classList.remove('mobile-menu-open');
-  document.body.classList.remove('mobile-menu-open');
-  document.body.style.top = '';
-  window.scrollTo(0, savedScrollY);
 }
 
 function openMobileMenu() {
@@ -26,7 +20,7 @@ function openMobileMenu() {
   lockPageScroll();
 }
 
-function closeAllMobileSubmenus() {
+function closeMobileSubmenus() {
   if (!drawer) return;
 
   drawer.querySelectorAll('.mobile-menu-item.is-open').forEach((item) => {
@@ -41,8 +35,11 @@ function closeMobileMenu() {
   drawer.classList.add('-translate-x-full');
   backdrop.classList.remove('opacity-100', 'pointer-events-auto');
   backdrop.classList.add('opacity-0', 'pointer-events-none');
-  closeAllMobileSubmenus();
-  unlockPageScroll();
+  closeMobileSubmenus();
+  document.documentElement.classList.remove('mobile-menu-open');
+  document.body.classList.remove('mobile-menu-open');
+  document.body.style.top = '';
+  window.scrollTo(0, savedScrollY);
 }
 
 function initMobileSubmenus() {
@@ -99,6 +96,8 @@ function initDesktopSubmenus() {
       submenu.querySelector('a')?.focus();
     }
   }
+
+  // for currect functionallity with keyboard Tab button
 
   menuItems.forEach((item) => {
     const trigger = item.querySelector(':scope > a');
@@ -163,16 +162,8 @@ function isDesktopViewport() {
   return window.innerWidth >= Desktop_Breakpoit;
 }
 
-function getLogoSectionHeight() {
-  return logoSection ? logoSection.offsetHeight : 0;
-}
-
 function showDesktopNav() {
   navSection?.classList.remove('nav-hidden');
-}
-
-function hideDesktopNav() {
-  navSection?.classList.add('nav-hidden');
 }
 
 function handleDesktopNavScroll() {
@@ -185,7 +176,7 @@ function handleDesktopNavScroll() {
   }
 
   const scrollY = window.scrollY;
-  const logoHeight = getLogoSectionHeight();
+  const logoHeight = logoSection ? logoSection.offsetHeight : 0;
 
   if (scrollY <= logoHeight) {
     showDesktopNav();
@@ -200,7 +191,7 @@ function handleDesktopNavScroll() {
   }
 
   if (scrollY >= logoHeight + Scroll_Offset) {
-    hideDesktopNav();
+    navSection?.classList.add('nav-hidden');
   }
 
   lastScrollY = scrollY;
