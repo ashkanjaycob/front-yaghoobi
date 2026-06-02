@@ -21,46 +21,66 @@ if (openBtn && closeBtn && backdrop) {
   backdrop.addEventListener('click', closeMobileMenu);
 }
 
-const logoContainer = document.getElementById('logo-container');
-const navContainer = document.getElementById('nav-container');
+const logoSection = document.getElementById('logo-container');
+const navSection = document.getElementById('nav-container');
+
+const Desktop_Breakpoit = 1024;
+const Scroll_Offset = 200;
 
 let lastScrollY = window.scrollY;
-let scrollTriggerPoint = 0;
-let isNavHidden = false;
 
-window.addEventListener('scroll', () => {
-  if (window.innerWidth < 1024) return;
+function isDesktopViewport() {
+  return window.innerWidth >= Desktop_Breakpoit;
+}
 
-  const currentScrollY = window.scrollY;
-  const logoHeight = logoContainer ? logoContainer.offsetHeight : 0;
+function getLogoSectionHeight() {
+  return logoSection ? logoSection.offsetHeight : 0;
+}
 
-  if (currentScrollY > lastScrollY) {
-    if (currentScrollY > logoHeight) {
-      if (!isNavHidden) {
-        if (scrollTriggerPoint === 0) {
-          scrollTriggerPoint = currentScrollY;
-        }
+function showDesktopNav() {
+  navSection?.classList.remove('nav-hidden');
+}
 
-        if (currentScrollY - scrollTriggerPoint > 200) {
-          navContainer.classList.add('nav-hidden');
-          isNavHidden = true;
-        }
-      }
-    }
-  } else {
-    scrollTriggerPoint = 0;
+function hideDesktopNav() {
+  navSection?.classList.add('nav-hidden');
+}
 
-    if (isNavHidden) {
-      navContainer.classList.remove('nav-hidden');
-      isNavHidden = false;
-    }
+function handleDesktopNavScroll() {
+  if (!logoSection || !navSection) return;
+
+  if (!isDesktopViewport()) {
+    showDesktopNav();
+    lastScrollY = window.scrollY;
+    return;
   }
 
-  if (currentScrollY <= logoHeight) {
-    navContainer.classList.remove('nav-hidden');
-    isNavHidden = false;
-    scrollTriggerPoint = 0;
+  const scrollY = window.scrollY;
+  const logoHeight = getLogoSectionHeight();
+
+  if (scrollY <= logoHeight) {
+    showDesktopNav();
+    lastScrollY = scrollY;
+    return;
   }
 
-  lastScrollY = currentScrollY;
-});
+  if (scrollY < lastScrollY) {
+    showDesktopNav();
+    lastScrollY = scrollY;
+    return;
+  }
+
+  if (scrollY >= logoHeight + Scroll_Offset) {
+    hideDesktopNav();
+  }
+
+  lastScrollY = scrollY;
+}
+
+if (logoSection && navSection) {
+  window.addEventListener('scroll', handleDesktopNavScroll, { passive: true });
+  window.addEventListener('resize', () => {
+    if (!isDesktopViewport()) showDesktopNav();
+    lastScrollY = window.scrollY;
+    handleDesktopNavScroll();
+  });
+}
