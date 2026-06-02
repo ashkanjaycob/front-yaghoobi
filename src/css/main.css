@@ -1,6 +1,17 @@
 @import 'tailwindcss';
 @import './reset.css';
 
+html.mobile-menu-open,
+body.mobile-menu-open {
+  overflow: hidden;
+  touch-action: none;
+}
+
+body.mobile-menu-open {
+  position: fixed;
+  width: 100%;
+}
+
 .submenu {
   opacity: 0;
   visibility: hidden;

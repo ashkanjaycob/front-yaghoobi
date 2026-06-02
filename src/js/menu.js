@@ -3,16 +3,34 @@ const closeBtn = document.getElementById('menu-close-btn');
 const backdrop = document.getElementById('mobile-backdrop');
 const drawer = document.getElementById('mobile-drawer');
 
+let savedScrollY = 0;
+
+function lockPageScroll() {
+  savedScrollY = window.scrollY;
+  document.documentElement.classList.add('mobile-menu-open');
+  document.body.classList.add('mobile-menu-open');
+  document.body.style.top = `-${savedScrollY}px`;
+}
+
+function unlockPageScroll() {
+  document.documentElement.classList.remove('mobile-menu-open');
+  document.body.classList.remove('mobile-menu-open');
+  document.body.style.top = '';
+  window.scrollTo(0, savedScrollY);
+}
+
 function openMobileMenu() {
   drawer.classList.remove('-translate-x-full');
   backdrop.classList.remove('opacity-0', 'pointer-events-none');
   backdrop.classList.add('opacity-100', 'pointer-events-auto');
+  lockPageScroll();
 }
 
 function closeMobileMenu() {
   drawer.classList.add('-translate-x-full');
   backdrop.classList.remove('opacity-100', 'pointer-events-auto');
   backdrop.classList.add('opacity-0', 'pointer-events-none');
+  unlockPageScroll();
 }
 
 if (openBtn && closeBtn && backdrop) {
