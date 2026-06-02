@@ -26,11 +26,37 @@ function openMobileMenu() {
   lockPageScroll();
 }
 
+function closeAllMobileSubmenus() {
+  if (!drawer) return;
+
+  drawer.querySelectorAll('.mobile-menu-item.is-open').forEach((item) => {
+    item.classList.remove('is-open');
+    item
+      .querySelector('.mobile-menu-toggle')
+      ?.setAttribute('aria-expanded', 'false');
+  });
+}
+
 function closeMobileMenu() {
   drawer.classList.add('-translate-x-full');
   backdrop.classList.remove('opacity-100', 'pointer-events-auto');
   backdrop.classList.add('opacity-0', 'pointer-events-none');
+  closeAllMobileSubmenus();
   unlockPageScroll();
+}
+
+function initMobileSubmenus() {
+  if (!drawer) return;
+
+  drawer.querySelectorAll('.mobile-menu-item').forEach((item) => {
+    const toggle = item.querySelector('.mobile-menu-toggle');
+    if (!toggle) return;
+
+    toggle.addEventListener('click', () => {
+      const isOpen = item.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', String(isOpen));
+    });
+  });
 }
 
 if (openBtn && closeBtn && backdrop) {
@@ -38,6 +64,8 @@ if (openBtn && closeBtn && backdrop) {
   closeBtn.addEventListener('click', closeMobileMenu);
   backdrop.addEventListener('click', closeMobileMenu);
 }
+
+initMobileSubmenus();
 
 const logoSection = document.getElementById('logo-container');
 const navSection = document.getElementById('nav-container');

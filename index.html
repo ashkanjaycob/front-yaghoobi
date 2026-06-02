@@ -352,7 +352,7 @@
 
     <div
       id="mobile-drawer"
-      class="fixed top-0 bottom-0 left-0 z-50 w-4/5 -translate-x-full bg-white shadow-2xl transition-transform duration-300 ease-in-out"
+      class="fixed top-0 bottom-0 left-0 z-50 flex w-4/5 -translate-x-full flex-col overflow-y-auto bg-white shadow-2xl transition-transform duration-300 ease-in-out"
     >
       <div class="flex items-center justify-between p-[1.5rem]">
         <span class="text-[1.25rem] font-bold uppercase">
@@ -367,66 +367,132 @@
       </div>
       <div class="w-full border-b border-gray-100"></div>
 
-      <ul class="flex flex-col gap-[1rem] p-[1.5rem]">
-        <li>
-          <a
-            href="#"
-            class="flex items-center justify-start border-b border-gray-100 pb-[0.5rem] text-[1rem] font-medium"
-            >Demos
-
-            <span class="ml-[0.5rem]">
-              <img src="src/assets/ChevronDown.svg" alt="ChevronDown" /></span
-          ></a>
+      <ul class="flex flex-col p-[1.5rem]">
+        <li class="mobile-menu-item border-b border-gray-100">
+          <button
+            type="button"
+            class="mobile-menu-toggle flex w-full items-center py-[0.75rem] text-left text-[1rem] font-medium"
+            aria-expanded="false"
+          >
+            Demos
+            <span class="mobile-menu-chevron ml-[0.5rem]">
+              <img src="src/assets/ChevronDown.svg" alt="" />
+            </span>
+          </button>
+          <ul class="mobile-submenu">
+            <li>
+              <a href="#" class="mobile-submenu-link">Demos Header</a>
+            </li>
+            <li>
+              <a href="#" class="mobile-submenu-link">Demos Layout</a>
+            </li>
+            <li>
+              <a href="#" class="mobile-submenu-link">Demos Buttons</a>
+            </li>
+          </ul>
         </li>
-        <li>
-          <a
-            href="#"
-            class="flex items-center justify-start border-b border-gray-100 pb-[0.5rem] text-[1rem] font-medium"
-            >Post
 
-            <span class="ml-[0.5rem]">
-              <img src="src/assets/ChevronDown.svg" alt="ChevronDown" /></span
-          ></a>
+        <li class="mobile-menu-item border-b border-gray-100">
+          <button
+            type="button"
+            class="mobile-menu-toggle flex w-full items-center py-[0.75rem] text-left text-[1rem] font-medium"
+            aria-expanded="false"
+          >
+            Post
+            <span class="mobile-menu-chevron ml-[0.5rem]">
+              <img src="src/assets/ChevronDown.svg" alt="" />
+            </span>
+          </button>
+          <ul class="mobile-submenu">
+            <li><a href="#" class="mobile-submenu-link">Post Header</a></li>
+            <li><a href="#" class="mobile-submenu-link">Post Layout</a></li>
+            <li><a href="#" class="mobile-submenu-link">Post Buttons</a></li>
+            <li><a href="#" class="mobile-submenu-link">Gallery Post</a></li>
+            <li><a href="#" class="mobile-submenu-link">Video Post</a></li>
+          </ul>
         </li>
-        <li>
-          <a
-            href="#"
-            class="flex items-center justify-start border-b border-gray-100 pb-[0.5rem] text-[1rem] font-medium"
-            >Features
 
-            <span class="ml-[0.5rem]">
-              <img src="src/assets/ChevronDown.svg" alt="ChevronDown" /></span
-          ></a>
+        <li class="mobile-menu-item border-b border-gray-100">
+          <button
+            type="button"
+            class="mobile-menu-toggle flex w-full items-center py-[0.75rem] text-left text-[1rem] font-medium"
+            aria-expanded="false"
+          >
+            Features
+            <span class="mobile-menu-chevron ml-[0.5rem]">
+              <img src="src/assets/ChevronDown.svg" alt="" />
+            </span>
+          </button>
+          <ul class="mobile-submenu">
+            <li>
+              <a href="#" class="mobile-submenu-link">Features Header</a>
+            </li>
+            <li>
+              <a href="#" class="mobile-submenu-link">Features Layout</a>
+            </li>
+            <li>
+              <a href="#" class="mobile-submenu-link">Features Buttons</a>
+            </li>
+            <li>
+              <a href="#" class="mobile-submenu-link">Gallery Features</a>
+            </li>
+          </ul>
         </li>
-        <li>
-          <a
-            href="#"
-            class="flex items-center justify-start border-b border-gray-100 pb-[0.5rem] text-[1rem] font-medium"
-            >Categories
 
-            <span class="ml-[0.5rem]">
-              <img src="src/assets/ChevronDown.svg" alt="ChevronDown" /></span
-          ></a>
+        <li class="mobile-menu-item border-b border-gray-100">
+          <button
+            type="button"
+            class="mobile-menu-toggle flex w-full items-center py-[0.75rem] text-left text-[1rem] font-medium"
+            aria-expanded="false"
+          >
+            Categories
+            <span class="mobile-menu-chevron ml-[0.5rem]">
+              <img src="src/assets/ChevronDown.svg" alt="" />
+            </span>
+          </button>
+          <ul class="mobile-submenu">
+            <li>
+              <a href="#" class="mobile-submenu-link">Categories Header</a>
+            </li>
+            <li>
+              <a href="#" class="mobile-submenu-link">Categories Layout</a>
+            </li>
+            <li>
+              <a href="#" class="mobile-submenu-link">Categories Buttons</a>
+            </li>
+            <li>
+              <a href="#" class="mobile-submenu-link">Gallery Categories</a>
+            </li>
+          </ul>
         </li>
-        <li>
-          <a
-            href="#"
-            class="flex items-center justify-start border-b border-gray-100 pb-[0.5rem] text-[1rem] font-medium"
-            >Shop
 
-            <span class="ml-[0.5rem]">
-              <img src="src/assets/ChevronDown.svg" alt="ChevronDown" /></span
-          ></a>
+        <li class="mobile-menu-item border-b border-gray-100">
+          <button
+            type="button"
+            class="mobile-menu-toggle flex w-full items-center py-[0.75rem] text-left text-[1rem] font-medium"
+            aria-expanded="false"
+          >
+            Shop
+            <span class="mobile-menu-chevron ml-[0.5rem]">
+              <img src="src/assets/ChevronDown.svg" alt="" />
+            </span>
+          </button>
+          <ul class="mobile-submenu">
+            <li><a href="#" class="mobile-submenu-link">Shop Header</a></li>
+            <li><a href="#" class="mobile-submenu-link">Shop Layout</a></li>
+            <li><a href="#" class="mobile-submenu-link">Shop Buttons</a></li>
+            <li><a href="#" class="mobile-submenu-link">Gallery Shop</a></li>
+            <li><a href="#" class="mobile-submenu-link">Video Shop</a></li>
+          </ul>
         </li>
+
         <li>
-          <a href="#" class="block pb-[0.5rem] text-[1rem] font-medium"
+          <a href="#" class="block py-[0.75rem] text-[1rem] font-medium"
             >Buy Now</a
           >
         </li>
       </ul>
     </div>
-
-    <div class="h-screen w-full bg-red-500">Hi</div>
 
     <script type="module" src="/src/js/main.js"></script>
   </body>
