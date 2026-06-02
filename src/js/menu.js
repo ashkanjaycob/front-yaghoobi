@@ -70,6 +70,90 @@ initMobileSubmenus();
 const logoSection = document.getElementById('logo-container');
 const navSection = document.getElementById('nav-container');
 
+function initDesktopSubmenus() {
+  if (!navSection) return;
+
+  const menuItems = navSection.querySelectorAll('.menu-item');
+
+  function closeDesktopSubmenu(item) {
+    item.classList.remove('is-open');
+    item.querySelector(':scope > a')?.setAttribute('aria-expanded', 'false');
+  }
+
+  function closeAllDesktopSubmenus(except) {
+    menuItems.forEach((item) => {
+      if (item !== except) closeDesktopSubmenu(item);
+    });
+  }
+
+  function openDesktopSubmenu(item, focusFirstLink = false) {
+    const trigger = item.querySelector(':scope > a');
+    const submenu = item.querySelector('.submenu');
+    if (!trigger || !submenu) return;
+
+    closeAllDesktopSubmenus(item);
+    item.classList.add('is-open');
+    trigger.setAttribute('aria-expanded', 'true');
+
+    if (focusFirstLink) {
+      submenu.querySelector('a')?.focus();
+    }
+  }
+
+  menuItems.forEach((item) => {
+    const trigger = item.querySelector(':scope > a');
+    const submenu = item.querySelector('.submenu');
+    if (!trigger || !submenu) return;
+
+    trigger.querySelector('span')?.classList.add('menu-chevron');
+    trigger.setAttribute('aria-haspopup', 'true');
+    trigger.setAttribute('aria-expanded', 'false');
+
+    trigger.addEventListener('focus', () => {
+      if (isDesktopViewport()) openDesktopSubmenu(item);
+    });
+
+    trigger.addEventListener('keydown', (e) => {
+      if (!isDesktopViewport()) return;
+
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        openDesktopSubmenu(item, true);
+      }
+
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        if (item.classList.contains('is-open')) {
+          closeDesktopSubmenu(item);
+        } else {
+          openDesktopSubmenu(item);
+        }
+      }
+
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        closeDesktopSubmenu(item);
+        trigger.focus();
+      }
+    });
+
+    item.addEventListener('focusout', (e) => {
+      if (!isDesktopViewport()) return;
+      if (!item.contains(e.relatedTarget)) {
+        closeDesktopSubmenu(item);
+      }
+    });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!isDesktopViewport() || !navSection.contains(e.target)) {
+      closeAllDesktopSubmenus();
+    }
+  });
+}
+
+initDesktopSubmenus();
+
 const Desktop_Breakpoit = 1024;
 const Scroll_Offset = 200;
 

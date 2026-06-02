@@ -20,10 +20,16 @@ body.mobile-menu-open {
 }
 
 @media (min-width: 1024px) {
-  .menu-item:hover .submenu {
+  .menu-item:hover .submenu,
+  .menu-item.is-open .submenu {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
+  }
+
+  .menu-item .menu-chevron {
+    display: inline-flex;
+    transition: transform 0.25s ease-in-out;
   }
 }
 
