@@ -20,7 +20,7 @@ function showSearchBar() {
 
 function hideSearchBar() {
   if (!searchBar) return;
-  searchBar.classList.add('hidden');  
+  searchBar.classList.add('hidden');
   if (searchInput) {
     searchInput.value = '';
   }
@@ -36,6 +36,7 @@ function liveSearch() {
   if (query === '') {
     displayPosts(loadedPosts);
     searchLoader?.classList.add('hidden');
+    searchEmpty?.classList.add('hidden');
     searchIcon?.classList.remove('hidden');
     return;
   }
