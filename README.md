@@ -35,8 +35,8 @@ Project Structure
 │   └── js/             # Menu, modal, posts, search modules
 └── vite.config.js      # Vite + Tailwind configuration
 ```
+
 4. Testing on a Mobile Device
-5. 
 The dev server is configured to listen on your local network (server.host: true in vite.config.js), so you can preview on a phone or tablet on the same Wi‑Fi.
 
 Run npm run dev on your computer.
@@ -49,5 +49,6 @@ Phone and computer must be on the same Wi‑Fi network.
 If the page does not load, check macOS firewall settings and allow incoming connections for Node/Vite.
 
 To find your machine’s IP manually on macOS, run:
-
+```
 ipconfig getifaddr en0
+```
