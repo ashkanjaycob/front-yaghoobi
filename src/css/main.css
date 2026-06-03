@@ -20,6 +20,7 @@ body.mobile-menu-open {
 }
 
 @media (min-width: 1024px) {
+
   .menu-item:hover .submenu,
   .menu-item.is-open .submenu {
     opacity: 1;
@@ -160,4 +161,33 @@ body.mobile-menu-open {
 .post-card-text {
   font-size: 0.9rem;
   color: #4b5563;
+}
+
+/* Modal Open Page Scroll Lock */
+html.modal-open,
+body.modal-open {
+  overflow: hidden;
+  touch-action: none;
+}
+
+body.modal-open {
+  position: fixed;
+  width: 100%;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
 }
