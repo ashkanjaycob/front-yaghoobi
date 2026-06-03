@@ -18,30 +18,33 @@
 <body>
   <!-----------Header Start------------->
   <header class="w-full font-sans" role="banner">
-    <div id="logo-container" class="hidden border-b border-gray-100 bg-white px-[4rem] py-[2rem] lg:block">
+    <div id="logo-container" class="hidden border-b border-[#E9E9E9] bg-white px-[4rem] py-[2rem] lg:block">
       <div class="mx-auto flex max-w-[72.5rem] items-center justify-between">
         <div class="w-[2rem]"></div>
         <a href="#" class="text-[2rem] font-bold tracking-[0.2rem] uppercase"><img src="src/assets/Logo.svg"
             alt="logo" /></a>
-        <button id="desktop-search-btn" class="cursor-pointer text-[1.25rem] transition-colors hover:text-gray-500" aria-label="Open search">
+        <button id="desktop-search-btn" class="cursor-pointer text-[1.25rem] transition-colors hover:text-gray-500"
+          aria-label="Open search">
           <img src="src/assets/Magnifier.svg" alt="" aria-hidden="true" />
         </button>
       </div>
     </div>
 
     <div class="flex items-center justify-between px-[1.5rem] py-[1rem] lg:hidden">
-      <button id="menu-open-btn" class="cursor-pointer text-[1.5rem]" aria-label="Open menu" aria-controls="mobile-drawer">
-        <img src="src/assets/HamburgerMenu.svg" alt="" aria-hidden="true" class="h-4 w-6" />
+      <button id="menu-open-btn" class="cursor-pointer text-[1.5rem]" aria-label="Open menu"
+        aria-controls="mobile-drawer">
+        <img src="src/assets/HamburgerMenu.svg" alt="" aria-hidden="true" class="h-[1rem] w-[1.5rem]" />
       </button>
       <a href="#" class="text-[2rem] font-bold tracking-[0.2rem] uppercase"><img src="src/assets/Logo.svg" alt="logo"
-          class="w-[10rem] h-6" /></a>
+          class="w-[10rem] h-[1.5rem]" /></a>
       <button id="mobile-search-btn" class="text-[1.25rem]" aria-label="Open search">
-        <img src="src/assets/Magnifier.svg" alt="" aria-hidden="true" class="w-4 h-4" />
+        <img src="src/assets/Magnifier.svg" alt="" aria-hidden="true" class="h-[1rem] w-[1rem]" />
       </button>
     </div>
   </header>
 
-  <nav id="nav-container" class="desktop-header-nav hidden w-full border-b border-gray-100 bg-white lg:block" aria-label="Main navigation">
+  <nav id="nav-container" class="desktop-header-nav hidden w-full border-b border-[#E9E9E9] bg-white lg:block"
+    aria-label="Main navigation">
     <div class="mx-auto flex max-w-[72.5rem] justify-center py-[1rem]">
       <ul class="flex gap-[2rem]">
         <li class="menu-item group relative py-[0.5rem]">
@@ -51,24 +54,24 @@
               <img src="src/assets/ChevronDown.svg" alt="ChevronDown" /></span>
           </a>
           <ul
-            class="submenu absolute top-[3.5rem] left-0 flex min-w-[12rem] flex-col gap-[0.5rem] border border-gray-100 bg-white p-[0.5rem] shadow-lg">
-            <li class="cursor-pointer">
+            class="submenu p-[0.5rem] absolute top-[3.5rem] left-0 flex min-w-[12rem] flex-col border border-[#E9E9E9] bg-white shadow-lg">
+            <li class="cursor-pointer leading-[1.5rem] border-b-1 border-[#E9E9E9]">
               <a href="#"
-                class="flex items-center justify-between border-b-1 border-gray-100 px-[0.75rem] py-[0.5rem] text-[0.85rem] hover:cursor-pointer hover:text-gray-500">Demos
+                class="flex items-center justify-between px-[0.75rem] py-[0.5rem] text-[0.85rem] hover:cursor-pointer hover:text-gray-500">Demos
                 Header
                 <span>
                   <img src="src/assets/ChevronRight.svg" alt="ChevronDown" /></span>
               </a>
             </li>
-            <li class="cursor-pointer">
+            <li class="cursor-pointer leading-[1.5rem] border-b-1 border-[#E9E9E9]">
               <a href="#"
-                class="flex items-center justify-between border-b-1 border-gray-100 px-[0.75rem] py-[0.5rem] text-[0.85rem] hover:cursor-pointer hover:text-gray-500">Demos
+                class="flex items-center justify-between px-[0.75rem] py-[0.5rem] text-[0.85rem] hover:cursor-pointer hover:text-gray-500">Demos
                 Layout
                 <span>
                   <img src="src/assets/ChevronRight.svg" alt="ChevronDown" /></span>
               </a>
             </li>
-            <li class="cursor-pointer">
+            <li class="cursor-pointer leading-[1.5rem]">
               <a href="#"
                 class="flex items-center justify-between px-[0.75rem] py-[0.5rem] text-[0.85rem] hover:cursor-pointer hover:text-gray-500">Demos
                 Buttons
@@ -84,40 +87,40 @@
             <span>
               <img src="src/assets/ChevronDown.svg" alt="ChevronDown" /></span></a>
           <ul
-            class="submenu absolute top-[3.5rem] left-0 flex min-w-[12rem] flex-col gap-[0.5rem] border border-gray-100 bg-white p-[0.5rem] shadow-lg">
-            <li class="cursor-pointer">
+            class="submenu absolute top-[3.5rem] left-0 flex min-w-[12rem] flex-col p-[0.5rem] border border-[#E9E9E9] bg-white shadow-lg">
+            <li class="cursor-pointer leading-[1.5rem]">
               <a href="#"
-                class="flex items-center justify-between border-b-1 border-gray-100 px-[0.75rem] py-[0.5rem] text-[0.85rem] hover:cursor-pointer hover:text-gray-500">Post
+                class="flex items-center justify-between border-b-1 border-[#E9E9E9] px-[0.75rem] py-[0.5rem] text-[0.85rem] hover:cursor-pointer hover:text-gray-500">Post
                 Header
                 <span>
                   <img src="src/assets/ChevronRight.svg" alt="ChevronDown" /></span>
               </a>
             </li>
-            <li class="cursor-pointer">
+            <li class="cursor-pointer leading-[1.5rem]">
               <a href="#"
-                class="flex items-center justify-between border-b-1 border-gray-100 px-[0.75rem] py-[0.5rem] text-[0.85rem] hover:cursor-pointer hover:text-gray-500">Post
+                class="flex items-center justify-between border-b-1 border-[#E9E9E9] px-[0.75rem] py-[0.5rem] text-[0.85rem] hover:cursor-pointer hover:text-gray-500">Post
                 Layout
                 <span>
                   <img src="src/assets/ChevronRight.svg" alt="ChevronDown" /></span>
               </a>
             </li>
-            <li class="cursor-pointer">
+            <li class="cursor-pointer leading-[1.5rem]">
               <a href="#"
-                class="flex items-center justify-between border-b-1 border-gray-100 px-[0.75rem] py-[0.5rem] text-[0.85rem] hover:cursor-pointer hover:text-gray-500">Post
+                class="flex items-center justify-between border-b-1 border-[#E9E9E9] px-[0.75rem] py-[0.5rem] text-[0.85rem] hover:cursor-pointer hover:text-gray-500">Post
                 Buttons
                 <span>
                   <img src="src/assets/ChevronRight.svg" alt="ChevronDown" /></span>
               </a>
             </li>
-            <li class="cursor-pointer">
+            <li class="cursor-pointer leading-[1.5rem]">
               <a href="#"
-                class="flex items-center justify-between border-b-1 border-gray-100 px-[0.75rem] py-[0.5rem] text-[0.85rem] hover:cursor-pointer hover:text-gray-500">Gallery
+                class="flex items-center justify-between border-b-1 border-[#E9E9E9] px-[0.75rem] py-[0.5rem] text-[0.85rem] hover:cursor-pointer hover:text-gray-500">Gallery
                 Post
                 <span>
                   <img src="src/assets/ChevronRight.svg" alt="ChevronDown" /></span>
               </a>
             </li>
-            <li class="cursor-pointer">
+            <li class="cursor-pointer leading-[1.5rem]">
               <a href="#"
                 class="flex items-center justify-between px-[0.75rem] py-[0.5rem] text-[0.85rem] hover:cursor-pointer hover:text-gray-500">Video
                 Post
@@ -133,32 +136,32 @@
             <span>
               <img src="src/assets/ChevronDown.svg" alt="ChevronDown" /></span></a>
           <ul
-            class="submenu absolute top-[3.5rem] left-0 flex min-w-[12rem] flex-col gap-[0.5rem] border border-gray-100 bg-white p-[0.5rem] shadow-lg">
-            <li class="cursor-pointer">
+            class="submenu absolute top-[3.5rem] left-0 flex min-w-[12rem] flex-col border border-[#E9E9E9] bg-white p-[0.5rem] shadow-lg">
+            <li class="cursor-pointer leading-[1.5rem]">
               <a href="#"
-                class="flex items-center justify-between border-b-1 border-gray-100 px-[0.75rem] py-[0.5rem] text-[0.85rem] hover:cursor-pointer hover:text-gray-500">Features
+                class="flex items-center justify-between border-b-1 border-[#E9E9E9] px-[0.75rem] py-[0.5rem] text-[0.85rem] hover:cursor-pointer hover:text-gray-500">Features
                 Header
                 <span>
                   <img src="src/assets/ChevronRight.svg" alt="ChevronDown" /></span>
               </a>
             </li>
-            <li class="cursor-pointer">
+            <li class="cursor-pointer leading-[1.5rem]">
               <a href="#"
-                class="flex items-center justify-between border-b-1 border-gray-100 px-[0.75rem] py-[0.5rem] text-[0.85rem] hover:cursor-pointer hover:text-gray-500">Features
+                class="flex items-center justify-between border-b-1 border-[#E9E9E9] px-[0.75rem] py-[0.5rem] text-[0.85rem] hover:cursor-pointer hover:text-gray-500">Features
                 Layout
                 <span>
                   <img src="src/assets/ChevronRight.svg" alt="ChevronDown" /></span>
               </a>
             </li>
-            <li class="cursor-pointer">
+            <li class="cursor-pointer leading-[1.5rem]">
               <a href="#"
-                class="flex items-center justify-between border-b-1 border-gray-100 px-[0.75rem] py-[0.5rem] text-[0.85rem] hover:cursor-pointer hover:text-gray-500">Features
+                class="flex items-center justify-between border-b-1 border-[#E9E9E9] px-[0.75rem] py-[0.5rem] text-[0.85rem] hover:cursor-pointer hover:text-gray-500">Features
                 Buttons
                 <span>
                   <img src="src/assets/ChevronRight.svg" alt="ChevronDown" /></span>
               </a>
             </li>
-            <li class="cursor-pointer">
+            <li class="cursor-pointer leading-[1.5rem]">
               <a href="#"
                 class="flex items-center justify-between px-[0.75rem] py-[0.5rem] text-[0.85rem] hover:cursor-pointer hover:text-gray-500">Gallery
                 Features
@@ -174,32 +177,32 @@
             <span>
               <img src="src/assets/ChevronDown.svg" alt="ChevronDown" /></span></a>
           <ul
-            class="submenu absolute top-[3.5rem] left-0 flex min-w-[12rem] flex-col gap-[0.5rem] border border-gray-100 bg-white p-[0.5rem] shadow-lg">
-            <li class="cursor-pointer">
+            class="submenu absolute top-[3.5rem] left-0 flex min-w-[12rem] flex-col border-[#E9E9E9] bg-white p-[0.5rem] shadow-lg">
+            <li class="cursor-pointer leading-[1.5rem]">
               <a href="#"
-                class="flex items-center justify-between border-b-1 border-gray-100 px-[0.75rem] py-[0.5rem] text-[0.85rem] hover:cursor-pointer hover:text-gray-500">Categories
+                class="flex items-center justify-between border-b-1 border-[#E9E9E9] px-[0.75rem] py-[0.5rem] text-[0.85rem] hover:cursor-pointer hover:text-gray-500">Categories
                 Header
                 <span>
                   <img src="src/assets/ChevronRight.svg" alt="ChevronDown" /></span>
               </a>
             </li>
-            <li class="cursor-pointer">
+            <li class="cursor-pointer leading-[1.5rem]">
               <a href="#"
-                class="flex items-center justify-between border-b-1 border-gray-100 px-[0.75rem] py-[0.5rem] text-[0.85rem] hover:cursor-pointer hover:text-gray-500">Categories
+                class="flex items-center justify-between border-b-1 border-[#E9E9E9] px-[0.75rem] py-[0.5rem] text-[0.85rem] hover:cursor-pointer hover:text-gray-500">Categories
                 Layout
                 <span>
                   <img src="src/assets/ChevronRight.svg" alt="ChevronDown" /></span>
               </a>
             </li>
-            <li class="cursor-pointer">
+            <li class="cursor-pointer leading-[1.5rem]">
               <a href="#"
-                class="flex items-center justify-between border-b-1 border-gray-100 px-[0.75rem] py-[0.5rem] text-[0.85rem] hover:cursor-pointer hover:text-gray-500">Categories
+                class="flex items-center justify-between border-b-1 border-[#E9E9E9] px-[0.75rem] py-[0.5rem] text-[0.85rem] hover:cursor-pointer hover:text-gray-500">Categories
                 Buttons
                 <span>
                   <img src="src/assets/ChevronRight.svg" alt="ChevronDown" /></span>
               </a>
             </li>
-            <li class="cursor-pointer">
+            <li class="cursor-pointer leading-[1.5rem]">
               <a href="#"
                 class="flex items-center justify-between px-[0.75rem] py-[0.5rem] text-[0.85rem] hover:cursor-pointer hover:text-gray-500">Gallery
                 Categories
@@ -215,40 +218,40 @@
             <span>
               <img src="src/assets/ChevronDown.svg" alt="ChevronDown" /></span></a>
           <ul
-            class="submenu absolute top-[3.5rem] left-0 flex min-w-[12rem] flex-col gap-[0.5rem] border border-gray-100 bg-white p-[0.5rem] shadow-lg">
-            <li class="cursor-pointer">
+            class="submenu absolute top-[3.5rem] left-0 flex min-w-[12rem] flex-col border border-[#E9E9E9] bg-white p-[0.5rem] shadow-lg">
+            <li class="cursor-pointer leading-[1.5rem]">
               <a href="#"
-                class="flex items-center justify-between border-b-1 border-gray-100 px-[0.75rem] py-[0.5rem] text-[0.85rem] hover:cursor-pointer hover:text-gray-500">Shop
+                class="flex items-center justify-between border-b-1 border-[#E9E9E9] px-[0.75rem] py-[0.5rem] text-[0.85rem] hover:cursor-pointer hover:text-gray-500">Shop
                 Header
                 <span>
                   <img src="src/assets/ChevronRight.svg" alt="ChevronDown" /></span>
               </a>
             </li>
-            <li class="cursor-pointer">
+            <li class="cursor-pointer leading-[1.5rem]">
               <a href="#"
-                class="flex items-center justify-between border-b-1 border-gray-100 px-[0.75rem] py-[0.5rem] text-[0.85rem] hover:cursor-pointer hover:text-gray-500">Shop
+                class="flex items-center justify-between border-b-1 border-[#E9E9E9] px-[0.75rem] py-[0.5rem] text-[0.85rem] hover:cursor-pointer hover:text-gray-500">Shop
                 Layout
                 <span>
                   <img src="src/assets/ChevronRight.svg" alt="ChevronDown" /></span>
               </a>
             </li>
-            <li class="cursor-pointer">
+            <li class="cursor-pointer leading-[1.5rem]">
               <a href="#"
-                class="flex items-center justify-between border-b-1 border-gray-100 px-[0.75rem] py-[0.5rem] text-[0.85rem] hover:cursor-pointer hover:text-gray-500">Shop
+                class="flex items-center justify-between border-b-1 border-[#E9E9E9] px-[0.75rem] py-[0.5rem] text-[0.85rem] hover:cursor-pointer hover:text-gray-500">Shop
                 Buttons
                 <span>
                   <img src="src/assets/ChevronRight.svg" alt="ChevronDown" /></span>
               </a>
             </li>
-            <li class="cursor-pointer">
+            <li class="cursor-pointer leading-[1.5rem]">
               <a href="#"
-                class="flex items-center justify-between border-b-1 border-gray-100 px-[0.75rem] py-[0.5rem] text-[0.85rem] hover:cursor-pointer hover:text-gray-500">Gallery
+                class="flex items-center justify-between border-b-1 border-[#E9E9E9] px-[0.75rem] py-[0.5rem] text-[0.85rem] hover:cursor-pointer hover:text-gray-500">Gallery
                 Shop
                 <span>
                   <img src="src/assets/ChevronRight.svg" alt="ChevronDown" /></span>
               </a>
             </li>
-            <li class="cursor-pointer">
+            <li class="cursor-pointer leading-[1.5rem]">
               <a href="#"
                 class="flex items-center justify-between px-[0.75rem] py-[0.5rem] text-[0.85rem] hover:cursor-pointer hover:text-gray-500">Video
                 Shop
@@ -267,16 +270,20 @@
   </nav>
 
   <!-- Search Start -->
-  <div id="search-bar" class="hidden w-full border-b border-slate-100 bg-slate-50 transition-all duration-200" role="search" aria-label="Search posts">
+  <div id="search-bar" class="hidden w-full border-b border-slate-100 bg-slate-50 transition-all duration-200"
+    role="search" aria-label="Search posts">
     <div class="mx-auto flex max-w-[72.5rem] items-center gap-4 px-[1rem] py-[0.8rem]">
-      <img id="search-icon" src="src/assets/Magnifier.svg" alt="" aria-hidden="true" class="w-4 h-4 opacity-30" />
+      <img id="search-icon" src="src/assets/Magnifier.svg" alt="" aria-hidden="true"
+        class="h-[1rem] w-[1rem] opacity-30" />
       <div id="search-loader"
-        class="hidden w-4 h-4 border-2 border-slate-200 border-t-slate-800 rounded-full animate-spin" role="status" aria-label="Searching"></div>
+        class="hidden h-[1rem] w-[1rem] border-2 border-slate-200 border-t-slate-800 rounded-full animate-spin"
+        role="status" aria-label="Searching"></div>
       <input type="text" id="search-input" placeholder="Type to search posts..."
         class="flex-1 text-[1.1rem] text-slate-800 outline-none placeholder:text-slate-400 bg-transparent"
         autocomplete="off" aria-label="Search posts" />
-      <button id="search-close-btn" class="cursor-pointer text-slate-400 hover:text-slate-600 transition-colors p-1" aria-label="Close search">
-        <img src="src/assets/XIcon.svg" alt="" aria-hidden="true" class="w-3 h-3" />
+      <button id="search-close-btn" class="cursor-pointer text-slate-400 hover:text-slate-600 transition-colors p-1"
+        aria-label="Close search">
+        <img src="src/assets/XIcon.svg" alt="" aria-hidden="true" class="h-[1rem] w-[1rem] opacity-30" />
       </button>
     </div>
   </div>
@@ -290,16 +297,16 @@
     class="fixed top-0 bottom-0 left-0 z-50 flex w-4/5 -translate-x-full flex-col overflow-y-auto bg-white shadow-2xl transition-transform duration-300 ease-in-out">
     <div class="flex items-center justify-between p-[1.5rem]">
       <span class="text-[1.25rem] font-bold uppercase">
-        <img src="src/assets/Logo.svg" alt="logo" class="w-[10rem] h-6" />
+        <img src="src/assets/Logo.svg" alt="logo" class="w-[10rem] h-[1.5rem]" />
       </span>
       <button id="menu-close-btn" class="cursor-pointer text-[1.5rem] font-light" aria-label="Close menu">
-        <img src="src/assets/XIcon.svg" alt="" aria-hidden="true" class="h-4 w-4" />
+        <img src="src/assets/XIcon.svg" alt="" aria-hidden="true" class="h-[1rem] w-[1rem]" />
       </button>
     </div>
-    <div class="w-full border-b border-gray-100"></div>
+    <div class="w-full border-b border-[#E9E9E9]"></div>
 
-    <ul class="flex flex-col p-[1.5rem]" role="menu">
-      <li class="mobile-menu-item border-b border-gray-100">
+    <ul class="flex flex-col p-[1rem]" role="menu">
+      <li class="mobile-menu-item border-b border-[#E9E9E9]">
         <button type="button"
           class="mobile-menu-toggle flex w-full items-center py-[0.75rem] text-left text-[1rem] font-medium"
           aria-expanded="false">
@@ -321,7 +328,7 @@
         </ul>
       </li>
 
-      <li class="mobile-menu-item border-b border-gray-100">
+      <li class="mobile-menu-item border-b border-[#E9E9E9]">
         <button type="button"
           class="mobile-menu-toggle flex w-full items-center py-[0.75rem] text-left text-[1rem] font-medium"
           aria-expanded="false">
@@ -339,7 +346,7 @@
         </ul>
       </li>
 
-      <li class="mobile-menu-item border-b border-gray-100">
+      <li class="mobile-menu-item border-b border-[#E9E9E9]">
         <button type="button"
           class="mobile-menu-toggle flex w-full items-center py-[0.75rem] text-left text-[1rem] font-medium"
           aria-expanded="false">
@@ -364,7 +371,7 @@
         </ul>
       </li>
 
-      <li class="mobile-menu-item border-b border-gray-100">
+      <li class="mobile-menu-item border-b border-[#E9E9E9]">
         <button type="button"
           class="mobile-menu-toggle flex w-full items-center py-[0.75rem] text-left text-[1rem] font-medium"
           aria-expanded="false">
@@ -389,7 +396,7 @@
         </ul>
       </li>
 
-      <li class="mobile-menu-item border-b border-gray-100">
+      <li class="mobile-menu-item border-b border-[#E9E9E9]">
         <button type="button"
           class="mobile-menu-toggle flex w-full items-center py-[0.75rem] text-left text-[1rem] font-medium"
           aria-expanded="false">
@@ -460,9 +467,9 @@
       class="relative z-10 flex max-h-[90vh] w-full max-w-2xl origin-center scale-95 flex-col overflow-hidden bg-white shadow-2xl transition-all duration-500 ease-out opacity-0">
 
       <button id="post-modal-close-icon"
-        class="absolute top-4 right-4 z-20 flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-white/80 shadow-md backdrop-blur-sm transition-transform hover:scale-105 hover:bg-white"
+        class="absolute top-4 right-4 z-20 flex h-[2rem] w-[2rem] cursor-pointer items-center justify-center rounded-full bg-white/80 shadow-md backdrop-blur-sm transition-transform hover:scale-105 hover:bg-white"
         aria-label="Close modal">
-        <img src="src/assets/XIcon.svg" alt="Close" class="w-4 h-4" />
+        <img src="src/assets/XIcon.svg" alt="Close" class="h-[1rem] w-[1rem] opacity-50" />
       </button>
 
 
@@ -475,7 +482,7 @@
 
         <div class="p-6 md:p-8">
 
-          <p id="post-modal-category" class="text-[0.8rem] font-bold uppercase text-[red] mb-2"></p>
+          <p id="post-modal-category" class="text-[0.8rem] font-bold uppercase text-[#EB0028] mb-2"></p>
 
           <h2 id="post-modal-title" class="text-[1.5rem] font-bold leading-tight mb-2"></h2>
 
