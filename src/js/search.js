@@ -4,6 +4,8 @@ const searchBar = document.getElementById('search-bar');
 const searchInput = document.getElementById('search-input');
 const searchLoader = document.getElementById('search-loader');
 const searchCloseBtn = document.getElementById('search-close-btn');
+const searchEmpty = document.getElementById('search-empty');
+const searchIcon = document.getElementById('search-icon');
 
 const desktopSearchBtn = document.getElementById('desktop-search-btn');
 const mobileSearchBtn = document.getElementById('mobile-search-btn');
@@ -18,11 +20,13 @@ function showSearchBar() {
 
 function hideSearchBar() {
   if (!searchBar) return;
-  searchBar.classList.add('hidden');
+  searchBar.classList.add('hidden');  
   if (searchInput) {
     searchInput.value = '';
   }
   searchLoader?.classList.add('hidden');
+  searchIcon?.classList.remove('hidden');
+  searchEmpty?.classList.add('hidden');
   displayPosts(loadedPosts);
 }
 
@@ -32,6 +36,7 @@ function liveSearch() {
   if (query === '') {
     displayPosts(loadedPosts);
     searchLoader?.classList.add('hidden');
+    searchIcon?.classList.remove('hidden');
     return;
   }
 
@@ -44,6 +49,13 @@ function liveSearch() {
 
   displayPosts(filtered);
   searchLoader?.classList.add('hidden');
+  searchIcon?.classList.remove('hidden');
+
+  if (filtered.length === 0) {
+    searchEmpty?.classList.remove('hidden');
+  } else {
+    searchEmpty?.classList.add('hidden');
+  }
 }
 
 desktopSearchBtn?.addEventListener('click', showSearchBar);
@@ -52,6 +64,7 @@ searchCloseBtn?.addEventListener('click', hideSearchBar);
 
 searchInput?.addEventListener('input', () => {
   searchLoader?.classList.remove('hidden');
+  searchIcon?.classList.add('hidden');
 
   clearTimeout(searchTimeout);
   searchTimeout = setTimeout(() => {
