@@ -89,6 +89,12 @@ body.mobile-menu-open {
 @media (min-width: 1024px) {
   .posts-section {
     max-width: 72.5rem;
+    padding: 0 1rem 3rem;
+  }
+}
+
+@media (min-width: 1160px) {
+  .posts-section {
     padding: 0 0 3rem;
   }
 }
