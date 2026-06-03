@@ -34,6 +34,7 @@ export function displayPosts(posts) {
 }
 
 const getPosts = async () => {
+  const loader = document.getElementById('posts-loader');
   try {
     const response = await fetch(
       'https://cloud.codesupply.co/endpoint/react/data.json'
@@ -42,9 +43,11 @@ const getPosts = async () => {
     const posts = await response.json();
     loadedPosts = posts;
 
+    if (loader) loader.remove();
     displayPosts(posts);
   } catch (error) {
     console.error(error, 'There is an issue !');
+    if (loader) loader.remove();
   }
 };
 
