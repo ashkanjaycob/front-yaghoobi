@@ -1,5 +1,3 @@
-const openBtn = document.getElementById('menu-open-btn');
-const closeBtn = document.getElementById('menu-close-btn');
 const backdrop = document.getElementById('mobile-backdrop');
 const drawer = document.getElementById('mobile-drawer');
 
@@ -55,6 +53,9 @@ function initMobileSubmenus() {
     });
   });
 }
+
+const openBtn = document.getElementById('menu-open-btn');
+const closeBtn = document.getElementById('menu-close-btn');
 
 if (openBtn && closeBtn && backdrop) {
   openBtn.addEventListener('click', openMobileMenu);

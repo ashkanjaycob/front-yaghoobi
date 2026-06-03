@@ -12,11 +12,6 @@ const mobileSearchBtn = document.getElementById('mobile-search-btn');
 
 let searchTimeout = null;
 
-function showSearchBar() {
-  if (!searchBar) return;
-  searchBar.classList.remove('hidden');
-  searchInput?.focus();
-}
 
 function hideSearchBar() {
   if (!searchBar) return;
@@ -59,8 +54,16 @@ function liveSearch() {
   }
 }
 
-desktopSearchBtn?.addEventListener('click', showSearchBar);
-mobileSearchBtn?.addEventListener('click', showSearchBar);
+desktopSearchBtn?.addEventListener('click', () => {
+  if (!searchBar) return;
+  searchBar.classList.remove('hidden');
+  searchInput?.focus();
+});
+mobileSearchBtn?.addEventListener('click', () => {
+  if (!searchBar) return;
+  searchBar.classList.remove('hidden');
+  searchInput?.focus();
+});
 searchCloseBtn?.addEventListener('click', hideSearchBar);
 
 searchInput?.addEventListener('input', () => {
