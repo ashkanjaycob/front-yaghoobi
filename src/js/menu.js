@@ -3,7 +3,6 @@ const drawer = document.getElementById('mobile-drawer');
 
 let savedScrollY = 0;
 
-// lock mobile menu backdrop scroll for currect ux
 function lockPageScroll() {
   savedScrollY = window.scrollY;
   document.documentElement.classList.add('mobile-menu-open');
@@ -97,8 +96,6 @@ function initDesktopSubmenus() {
       submenu.querySelector('a')?.focus();
     }
   }
-
-  // for currect functionallity with keyboard Tab button
 
   menuItems.forEach((item) => {
     const trigger = item.querySelector(':scope > a');
