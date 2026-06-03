@@ -124,13 +124,13 @@ body.mobile-menu-open {
 }
 
 .post-card-category {
-  font-size: 0.85rem;
-  font-weight: 600;
+  font-size: 0.8rem;
+  font-weight: 700;
   color: red;
 }
 
 .post-card-author {
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   color: #0a0a0b;
   font-weight: 500;
 }
@@ -141,25 +141,26 @@ body.mobile-menu-open {
   margin-left: 0.5rem;
   padding: 0;
   list-style: none;
-  font-size: 0.9rem;
-  color: #4b5563;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #9B9B9B;
 }
 
 .post-card-statics li::before {
   content: '•';
-  color: #d7d7d7;
+  color: #9B9B9B;
   margin-right: 0.35rem;
 }
 
 .post-card-title {
   margin: 0.5rem 0;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: 700;
 }
 
 .post-card-text {
   font-size: 0.9rem;
-  color: #4b5563;
+  color: #929292;
 }
 
 /* Modal Open Page Scroll Lock */
