@@ -1,4 +1,8 @@
+import { openModal } from './modal.js';
+
 const grid = document.getElementById('posts-grid');
+
+let loadedPosts = [];
 
 const getPosts = async () => {
   try {
@@ -7,13 +11,14 @@ const getPosts = async () => {
     );
     if (!response.ok) throw new Error('Could not fetch data');
     const posts = await response.json();
+    loadedPosts = posts;
 
     if (!grid) return;
 
     grid.innerHTML = posts
       .map(
-        (post) => `
-      <article class="post-card">
+        (post, index) => `
+      <article class="post-card" data-index="${index}">
         <img
           src="${post.img}"
           srcset="${post.img} 1x, ${post.img_2x} 2x"
@@ -38,5 +43,18 @@ const getPosts = async () => {
     console.error(error, 'There is an issue !');
   }
 };
+
+if (grid) {
+  grid.addEventListener('click', (e) => {
+    const card = e.target.closest('.post-card');
+    if (card) {
+      const index = card.getAttribute('data-index');
+      const post = loadedPosts[index];
+      if (post) {
+        openModal(post);
+      }
+    }
+  });
+}
 
 getPosts();
