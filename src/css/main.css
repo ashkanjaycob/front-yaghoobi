@@ -81,7 +81,6 @@ body.mobile-menu-open {
 
 .posts-section {
   margin-top: 3rem;
-  max-width: 75rem;
   margin-left: auto;
   margin-right: auto;
   padding: 0 1.5rem 3rem;
@@ -89,16 +88,16 @@ body.mobile-menu-open {
 
 @media (min-width: 1024px) {
   .posts-section {
-    padding-left: 4rem;
-    padding-right: 4rem;
+    max-width: 72.5rem;
+    padding: 0 0 3rem;
   }
 }
 
 .posts-grid {
   display: flex;
   flex-wrap: wrap;
-  column-gap: 30px;
-  row-gap: 30px;
+  column-gap: 2rem;
+  row-gap: 2rem
 }
 
 .post-card {
@@ -108,13 +107,13 @@ body.mobile-menu-open {
 
 @media (min-width: 768px) {
   .post-card {
-    width: calc((100% - 30px) / 2);
+    width: calc((100% - 2rem) / 2);
   }
 }
 
 @media (min-width: 1024px) {
   .post-card {
-    width: calc((100% - 60px) / 3);
+    width: calc((100% - 4rem) / 3);
   }
 }
 
